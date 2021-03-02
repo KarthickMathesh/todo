@@ -1,0 +1,27 @@
+{
+  "short_name": "TODO",
+  "name": "To Do List With Local Storage",
+  "icons": [
+    {
+      "src": "/img/icon-128x128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "/img/icon-256x256.png",
+      "type": "image/png",
+      "sizes": "256x256",
+			"purpose": "maskable"
+    },
+    {
+      "src": "/img/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/index.html",
+  "background_color": "#ff6f47",
+  "display": "fullscreen",
+  "scope": "/",
+  "theme_color": "#ff6f47"
+}
