@@ -1,6 +1,6 @@
 {
   "short_name": "TODO",
-  "name": "To Do List With Local Storage",
+  "name": "TODO",
   "icons": [
     {
       "src": "/img/icon-128x128.png",
@@ -20,7 +20,8 @@
     }
   ],
   "start_url": "/index.html",
-  "background_color": "#ff6f47",
+  "background_color": "#2c3e50",
+  "color": "#fff",
   "display": "fullscreen",
   "scope": "/",
   "theme_color": "#ff6f47"
