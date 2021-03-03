@@ -138,3 +138,10 @@ select{
 	background: white;
 	color: #ff6f47;
 }
+
+@media all and (max-width: 768px) {
+	.todo-list{
+		min-width: 90%;
+		background-repeat: no-repeat;
+	}
+}
