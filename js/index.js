@@ -45,6 +45,7 @@
 		//Delete Button
 		if(item.classList[0] === 'trash-btn'){
 			const todo = item.parentElement;
+			removeLocalTodos(todo);
 			todo.remove();
 		}
 		//Check Button
@@ -106,7 +107,7 @@
 			todoDiv.classList.add("todo");
 		//Create LI
 			const newTodo  = document.createElement('li');
-			newTodo.innerText = todos;
+			newTodo.innerText = todo;
 			newTodo.classList.add('todo-item');
 			todoDiv.appendChild(newTodo);
 		
@@ -123,4 +124,16 @@
 		//Append to list
 			todoList.appendChild(todoDiv);
 		});
+	}
+
+	function removeLocalTodos(todo) {
+		let todos;
+		if (localStorage.getItem("todos") === null) {
+			todos = [];
+		} else {
+			todos = JSON.parse(localStorage.getItem("todos"));
+		}
+		const todoIndex = todo.children[0].innerText;
+		todos.splice(todos.indexOf(todoIndex), 1);
+		localStorage.setItem("todos", JSON.stringify(todos));
 	}
