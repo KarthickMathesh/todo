@@ -1,56 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Todo List 2022 with LocalStorage</title>
-	<link rel="stylesheet" href="css/main.css" />
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;0,900;1,400&family=Montserrat:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
-</head>
-<body>
-	<main class="app">
-		<section class="greeting">
-			<h2 class="title">
-				What's up, <input type="text" id="name" placeholder="Karthick" />
-			</h2>
-		</section>
-		<section class="create-todo">
-			<h3>CREATE A TODO</h3>
-			<form id="new-todo-form">
-				<h4>What's on your todo?</h4>
-				<input 
-					type="text" 
-					placeholder="e.g. Get some milk"
-					name="content"
-					id="content" />
-				
-				<h4>Pick a category</h4>
-				<div class="options">
-					<label>
-						<input type="radio" name="category" id="category1" value="business" /> 
-						<span class="bubble business"></span>
-						<div>Business</div>
-					</label>
-					<label>
-						<input type="radio" name="category" id="category2" value="personal" />
-						<span class="bubble personal"></span>
-						<div>Personal</div>
-					</label>
-				</div>
-
-				<input type="submit" value="Add todo" />
-			</form>
-		</section>
-
-		<section class="todo-list">
-			<h3>TODO LIST</h3>
-			<div class="list" id="todo-list"></div>
-		</section>
-	</main>
-
-	<script src="js/main.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2c3e50" />
+    <link
+      rel="shortcut icon"
+      href="/img/icon-128x128.png"
+      type="image/x-icon"
+    />
+    <title>TODO</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <h1>TODO</h1>
+    <form>
+      <input
+        type="text"
+        name="todo-input"
+        class="todo-input"
+        autocomplete="off"
+      />
+      <button type="submit" class="todo-button">
+        <i class="fas fa-plus-square"></i>
+      </button>
+      <div class="select">
+        <select name="todos" class="filter-todo">
+          <option value="all">All</option>
+          <option value="completed">Completed</option>
+          <option value="uncompleted">Uncompleted</option>
+        </select>
+      </div>
+      <div class="import-file">
+        <input type="file" name="import-file" id="import-file" style="display: hidden;" />
+      </div>
+    </form>
+    <div class="todo-container">
+      <ul class="todo-list"></ul>
+    </div>
+    <!-- Scripts -->
+    <script src="./js/index.js"></script>
+    <script src="main.js"></script>
+  </body>
 </html>
