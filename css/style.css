@@ -144,12 +144,14 @@ select {
   color: #ff6f47;
 }
 
-/* .import-file {
-  background-color: #fff;
+.import-file {
+  position: absolute;
   width: 30%;
   margin: 0 auto;
-  padding: 1rem;
-} */
+  margin-top: 10rem;
+  padding: -50px;
+  left: 35%;
+}
 
 .display-none {
   display: none;
