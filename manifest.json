@@ -1,28 +1,28 @@
 {
-  "short_name": "TODO",
-  "name": "TODO",
-  "icons": [
-    {
-      "src": "/img/icon-128x128.png",
-      "type": "image/png",
-      "sizes": "128x128"
-    },
-    {
-      "src": "/img/icon-256x256.png",
-      "type": "image/png",
-      "sizes": "256x256",
+	"short_name": "TODO",
+	"name": "TODO",
+	"icons": [
+		{
+			"src": "/img/icon-128x128.png",
+			"type": "image/png",
+			"sizes": "128x128"
+		},
+		{
+			"src": "/img/icon-256x256.png",
+			"type": "image/png",
+			"sizes": "256x256",
 			"purpose": "maskable"
-    },
-    {
-      "src": "/img/icon-512x512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
-  ],
-  "start_url": "/index.html",
-  "background_color": "#454545",
-  "color": "#fff",
-  "display": "standalone",
-  "scope": "/",
-  "theme_color": "#454545"
+		},
+		{
+			"src": "/img/icon-512x512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		}
+	],
+	"start_url": "/index.html",
+	"background_color": "#454545",
+	"color": "#fff",
+	"display": "standalone",
+	"scope": "/",
+	"theme_color": "#454545"
 }
