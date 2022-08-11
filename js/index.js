@@ -10,13 +10,14 @@ getTodos()
 todoButton.addEventListener('click', addTodo)
 todoList.addEventListener('click', deleteCheck)
 filterOption.addEventListener('click', filterTodo)
-import_file.addEventListener('click', importJson)
+import_file.addEventListener('change', importJson)
 
 function getTodos() {
 	let todos
 	if (localStorage.getItem('todos') !== []) {
 		todos = []
 		if (todos.length === 0) {
+			localStorage.setItem('todos', JSON.stringify(todos))
 			showImportFile()
 		}
 		todos.forEach(function (todo) {
@@ -64,14 +65,14 @@ function addTodo(event) {
 	todoList.appendChild(todoDiv)
 	todoInput.value = ''
 
-	// let todos
-	// if (localStorage.getItem('todos') !== []) {
-	// 	todos = JSON.parse(localStorage.getItem('todos'))
-	// 	if (todos.length === 0) {
-	// 		todos = []
-	// 		localStorage.setItem('todos', JSON.stringify(todos))
-	// 	}
-	// }
+	let todos
+	if (localStorage.getItem('todos') !== []) {
+		todos = JSON.parse(localStorage.getItem('todos'))
+		if (todos.length === 0) {
+			todos = []
+			localStorage.setItem('todos', JSON.stringify(todos))
+		}
+	}
 
 	showImportFile()
 }
@@ -98,12 +99,27 @@ function showImportFile() {
 	} else {
 		import_file.classList.add('display-none')
 	}
-
-	console.log(todos)
 }
 
-function importJson() {
-	alert('Importing JSON file is not supported yet')
+function importJson(e) {
+	e.preventDefault()
+	const file = document.querySelector('#import-file').files[0]
+	const reader = new FileReader()
+	reader.readAsText(file)
+	reader.onload = function () {
+		const importedTodos = JSON.parse(this.result)
+		importedTodos.todos.forEach(function (todo) {
+			let todos
+			if (localStorage.getItem('todos') === null) {
+				todos = []
+			} else {
+				todos = JSON.parse(localStorage.getItem('todos'))
+			}
+			todos.push(todo.todo)
+			localStorage.setItem('todos', JSON.stringify(todos))
+			getTodos()
+		})
+	}
 }
 
 function filterTodo(event) {
