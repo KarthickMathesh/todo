@@ -20,9 +20,9 @@
     }
   ],
   "start_url": "/index.html",
-  "background_color": "#2c3e50",
+  "background_color": "#454545",
   "color": "#fff",
-  "display": "fullscreen",
+  "display": "standalone",
   "scope": "/",
-  "theme_color": "#ff6f47"
+  "theme_color": "#454545"
 }
